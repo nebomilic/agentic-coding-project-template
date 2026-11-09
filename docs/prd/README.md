@@ -32,6 +32,13 @@ months later when someone asks why.
 The useful test: could two competent teams read this and build it with
 completely different technology? If not, it has drifted.
 
+Design links are the subtle case. A mockup is a specific visual solution, so a
+PRD full of them quietly becomes a design spec with a problem statement
+stapled to the front. For anything that establishes a pattern, link to a
+`docs/design/` entry and let that entry hold the reference — one place to
+update when the design moves, and the Designer owns the pointer to their own
+work. Linking directly is fine for a genuine one-off screen.
+
 ## Before a PRD is marked Ready
 
 - The Designer has reviewed the flows.

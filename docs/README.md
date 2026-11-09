@@ -17,6 +17,13 @@ technical choice and what it commits us to. The moment a PRD names a
 technology, or an ADR decides something a user would notice, the document and
 its owner have come apart. Both are common; both are worth catching in review.
 
+## What is not here
+
+Work state — what is in flight, who owns it, what is next — is deliberately
+outside the repository, in the issue tracker.
+[ADR-0003](./adr/0003-work-tracking.md) sets out why, and why a task list in
+version control is the worst available option.
+
 ## Numbering
 
 Documents in `prd/`, `adr/` and `design/` are numbered sequentially with four

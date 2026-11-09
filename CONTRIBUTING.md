@@ -27,6 +27,8 @@ is.
 | Automated tests | Developer | — | Developer |
 | Acceptance criteria | Product Manager | Developer, Designer | Product Manager |
 | Manual acceptance run | Whoever ships the change | — | — |
+| Design references and versions | Designer | — | Designer |
+| Work item state | — lives outside the repo, see [ADR-0003](./docs/adr/0003-work-tracking.md) | — | — |
 
 `CODEOWNERS` encodes this matrix as a mechanism. Keep the two in sync; if they
 disagree, `CODEOWNERS` is what actually happens.

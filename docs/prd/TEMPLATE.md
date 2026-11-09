@@ -38,6 +38,16 @@ where not.
 Out-of-scope is the most valuable section of this document. Unstated scope
 grows quietly and is only noticed when the deadline is already past.
 
+## Design
+
+<Link to the `docs/design/` entry that holds the reference, for anything that
+establishes a pattern. For a one-off screen, the reference block from
+`docs/design/TEMPLATE.md` can sit here directly — including the frame name, the
+date and the one-line description of what it showed. Never a bare URL.>
+
+<Leave this as "None — no visual surface" when that is true, rather than
+deleting the section. An absent section reads as an oversight.>
+
 ## Constraints
 
 Regulatory, commercial, timing, or dependency constraints that bound the

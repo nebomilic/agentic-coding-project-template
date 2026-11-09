@@ -66,6 +66,19 @@ them quietly becomes wrong.
 - **Runbook** — written the second time someone has to figure out the same
   procedure.
 
+## What this repository deliberately does not hold
+
+- **Work state** — what is in flight, who has it, what is next. That lives in
+  the issue tracker, holding state only, with every item linking back here.
+  [ADR-0003](./docs/adr/0003-work-tracking.md) argues why, including why a
+  `TODO.md` is the worst of both worlds.
+- **Visual designs** — the design tool stays canonical. `docs/design/` holds
+  the decisions a mockup cannot carry, and the references that say which
+  version was meant.
+
+Both are deliberate. A newcomer asking "where is the backlog?" or "where are
+the designs?" should find that question answered here rather than guessed at.
+
 ## Status
 
 <Current phase, e.g. "Pre-launch — v1 scope frozen, see docs/prd/README.md">

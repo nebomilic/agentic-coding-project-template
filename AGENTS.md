@@ -47,7 +47,25 @@ Stop and surface the question rather than deciding yourself when:
   sequentially with four digits. Never edit an accepted ADR; write a new one
   that supersedes it and update the index.
 - **Design** (`docs/design/`) — do not author these. Read them and follow
-  them.
+  them. You may add implementation notes to an existing entry when something is
+  agreed during the work; the reference block and the decisions are the
+  Designer's.
+
+## Work state and design references
+
+- **Do not create or maintain a task list in this repository.** No `TODO.md`,
+  no backlog file, no status table. Work state lives in the issue tracker
+  ([ADR-0003](./docs/adr/0003-work-tracking.md)). If you need to track steps
+  within a single task, keep them in your own working notes, not in a committed
+  file.
+- **Never invent a design link.** If a PRD or design entry has no reference and
+  the work needs one, say so. A plausible-looking link to the wrong frame is
+  worse than an acknowledged gap.
+- **Treat a design reference as possibly stale.** Each one records the date it
+  was linked and what it showed at the time. If what you find does not match
+  that description, the design has moved since the document was written — stop
+  and flag it rather than implementing whichever version you happen to be
+  looking at.
 
 ## Conventions that apply everywhere
 
