@@ -1,0 +1,22 @@
+# Dependencies and build output
+# Replace with the conventions of your stack — kept minimal on purpose.
+node_modules/
+dist/
+build/
+out/
+target/
+__pycache__/
+
+# Environment and secrets — never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local tooling
+.DS_Store
+.idea/
+.vscode/
+*.log
+coverage/

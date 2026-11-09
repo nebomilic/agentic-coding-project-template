@@ -1,0 +1,24 @@
+# Review routing. Mirrors the ownership matrix in CONTRIBUTING.md.
+# Replace the placeholder handles with real users or teams.
+# Last match wins, so order matters.
+
+*                               @dev-team
+
+/README.md                      @pm
+/CONTRIBUTING.md                @pm @dev-lead
+/AGENTS.md                      @dev-lead
+/CLAUDE.md                      @dev-lead
+/CODEOWNERS                     @dev-lead @pm
+
+/docs/prd/                      @pm
+/docs/adr/                      @dev-lead
+/docs/design/                   @designer
+/docs/runbooks/                 @dev-team
+
+/packages/shared/tokens/        @designer @dev-lead
+
+/apps/web/AGENTS.md             @dev-lead @designer
+/apps/                          @dev-team
+/packages/                      @dev-team
+/infra/                         @dev-lead
+/scripts/                       @dev-team
