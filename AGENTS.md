@@ -62,12 +62,38 @@ Stop and surface the question rather than deciding yourself when:
   in test fixtures, example configs, and documentation examples. Use obvious
   placeholders.
 
+## Tests
+
+The full rule is [ADR-0002](./docs/adr/0002-testing-strategy.md). What you need
+before writing one:
+
+- **Test observable behaviour, through the public interface.** Do not reach
+  into internals. A test coupled to the implementation blocks the refactors
+  tests exist to enable.
+- **Pick the lowest layer that can observe the behaviour honestly.** Unit when
+  the behaviour is genuinely local; integration when it only exists in the
+  interaction — a query, a transaction, a request path. Do not force a unit
+  test onto behaviour that lives between components.
+- **Mock only at boundaries we do not own**: third-party services, the clock,
+  the network. Never mock our own modules to make a unit test possible — that
+  is the signal the behaviour belongs at a higher layer.
+- **A test must be able to fail for a real reason.** Before finishing, ask what
+  change to the code under test would break this test. If the honest answer is
+  "none that a user would notice", the test is asserting the implementation
+  back to itself. Delete it and test the behaviour instead.
+- **Do not add tests to satisfy a count or a coverage figure.** There is no
+  coverage target here, deliberately.
+- **Do not weaken or delete a failing test to make a change pass.** A test that
+  fails is either finding a defect or encoding an assumption that has changed.
+  Say which, and why, rather than editing it quietly.
+
 ## Definition of done
 
 Before reporting a task complete:
 
 1. The change builds and the app's own checks pass (see the app's `AGENTS.md`).
-2. Tests covering the changed behaviour exist and pass.
+2. The changed behaviour is covered at the layer ADR-0002 calls for, the new
+   tests fail when the behaviour is broken, and the existing suite still passes.
 3. Any decision made along the way is recorded as an ADR.
 4. Documentation that the change makes untrue has been updated in the same
    change.

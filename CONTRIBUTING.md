@@ -24,6 +24,9 @@ is.
 | `apps/*/README.md` | Developer of that app | — | — |
 | `docs/runbooks/*` | Developer | Whoever operates the procedure | — |
 | Application code | Developer | — | Developer |
+| Automated tests | Developer | — | Developer |
+| Acceptance criteria | Product Manager | Developer, Designer | Product Manager |
+| Manual acceptance run | Whoever ships the change | — | — |
 
 `CODEOWNERS` encodes this matrix as a mechanism. Keep the two in sync; if they
 disagree, `CODEOWNERS` is what actually happens.
@@ -39,6 +42,13 @@ review.
 consequences need the Product Manager's agreement, recorded in the ADR's
 consequences section. The test: if a user would notice, it is not purely
 technical.
+
+**Acceptance criteria are product-owned, test layers are developer-owned.**
+The Product Manager states what must be true for the work to count, as success
+criteria in the PRD. The Developer decides how that is verified and at which
+layer. Neither does the other's half: a PRD prescribing test types has crossed
+into implementation, and a suite with no traceable criteria is verifying
+whatever the developer assumed.
 
 **Design decisions must reach the repository.** The design tool remains the
 source of truth for visuals, and nothing here tries to mirror it. But rules

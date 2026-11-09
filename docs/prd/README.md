@@ -15,6 +15,13 @@ Statuses: **Draft** → **Ready** → **In progress** → **Shipped** / **Droppe
 The problem, who has it, what success looks like, and what is explicitly out of
 scope. It should be readable by someone who joined last week.
 
+The success criteria do double duty: they are also where both automated and
+manual acceptance checks come from (see
+[ADR-0002](../adr/0002-testing-strategy.md)). Write them specifically enough
+that someone could verify one without asking you what you meant. A criterion
+nobody can trace a check back to will not be tested, and a check nobody can
+trace to a criterion cannot be argued with when it fails.
+
 ## What a PRD must not contain
 
 A solution. No frameworks, no databases, no protocols, no schema. If the

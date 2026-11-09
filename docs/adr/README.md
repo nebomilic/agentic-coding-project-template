@@ -12,6 +12,7 @@ choice, kept so that nobody has to reconstruct the reasoning from the outcome.
 | # | Title | Status | Date |
 |---|---|---|---|
 | [0001](./0001-record-architecture-decisions.md) | Record architecture decisions | Accepted | <YYYY-MM-DD> |
+| [0002](./0002-testing-strategy.md) | Testing strategy | Accepted | 2026-11-09 |
 
 Statuses: **Proposed** → **Accepted** → **Superseded by #NNNN** / **Deprecated**.
 

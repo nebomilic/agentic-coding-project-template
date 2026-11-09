@@ -46,3 +46,10 @@ In addition to the root checklist:
 2. All four view states are handled.
 3. No raw design values — tokens only.
 4. The change works at the supported viewport range and with keyboard only.
+5. Behaviour is tested through what the user does — rendered output and
+   interaction — not through component internals or implementation detail. The
+   non-content states carry behaviour too; an error state with a recovery
+   action is logic, not decoration.
+6. Anything left to a human check — visual judgement, motion, a real assistive
+   technology — is named in the change description so it is a decision rather
+   than an omission.

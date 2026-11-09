@@ -35,7 +35,10 @@ Inherits the root `AGENTS.md`. Rules below take precedence within this folder.
 In addition to the root checklist:
 
 1. Build passes and the test suite is green.
-2. New or changed behaviour is covered by tests, including the failure paths.
+2. New or changed behaviour is covered through the service's public interface,
+   including the failure paths: rejected input, missing authorisation, and the
+   dependency being unavailable. Authorisation in particular is tested as a
+   denial, not only as a success.
 3. Any interface change is reflected in the contract and flagged to clients.
 4. Any schema change has a migration.
 5. No secrets or personal data in logs, fixtures, or examples.
