@@ -30,6 +30,13 @@ an ADR; it simply sits there, two years old, looking like a fact. That is why
 every note carries both an as-of date and a revisit-by date, and why the
 research index needs walking each planning cycle rather than every two weeks.
 
+## The one file here that is not a document
+
+`_dashboard.md` holds Dataview queries for the review cadences. The underscore
+prefix marks it as a tool: it is not numbered, has no lifecycle, and nothing
+cites it. Open it in Obsidian during a review; it only tells you where to look,
+and the indexes remain the authority.
+
 ## What is not here
 
 Work state — what is in flight, who owns it, what is next — is deliberately

@@ -179,13 +179,25 @@ Two rules keep it from becoming a dependency:
   is committed so this is set for anyone who opens the vault; the rest of
   `.obsidian/` is local and gitignored. Path form matters too — the full link
   convention is in [AGENTS.md](AGENTS.md).
-- **No plugin-rendered content in committed files.** A Dataview query standing
-  in for the ADR index is a code block to everyone not running Obsidian, and to
-  every agent. Queries live in `docs/_review.md`, which is gitignored for
-  exactly that reason, and which is worth opening for the cadences below.
+- **No plugin-rendered content in committed documents.** A Dataview query
+  standing in for the ADR index would be a code block to everyone not running
+  Obsidian, and to every agent. The one exception is `docs/_dashboard.md`,
+  which is entirely queries and is marked as a tool by its underscore prefix —
+  nobody reads it expecting prose.
 
 Open the vault at the repository root, not at `docs/`. The documentation spans
 the tree — app and package READMEs are part of it.
+
+**One plugin is required**, and only for the dashboard: **Dataview**. Without
+it, `docs/_dashboard.md` shows its queries as plain code blocks and nothing
+else breaks. Note that installing a community plugin does not enable it —
+Settings → Community plugins, then the toggle beside it. An installed-but-off
+plugin looks exactly like a broken file.
+
+Optional and unrelated to the structure: **Obsidian Git** (commit without
+leaving the editor, which matters because an uncommitted document has not been
+handed off) and **Advanced Tables** (these documents are mostly tables, and
+editing them by hand is miserable).
 
 ### Two things worth noticing
 
@@ -228,6 +240,18 @@ nothing committed depends on a particular one.
 - **Research index review, each planning cycle.** Anything past its revisit
   date is re-confirmed, superseded, or marked stale. Nothing enforces this, and
   an unmarked expired finding gets cited as fact.
+
+All three are walks through an index, asking of each row whether it is still
+true. Done by hand that is slow enough to get skipped, which is the failure
+this repository is least protected against.
+
+If you use Obsidian, open `docs/_dashboard.md` — it shortens the walk with
+queries for orphaned documents, oldest findings, and what depends on what.
+Nothing to set up; it is a file in the repository. Improve a query and commit
+it, and the next project inherits it.
+
+It is a convenience, not a dependency. Without it the cadences still work, just
+by hand, and the committed indexes remain the authority either way.
 
 ## Writing style
 
