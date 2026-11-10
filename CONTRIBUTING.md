@@ -28,6 +28,7 @@ is.
 | Acceptance criteria | Product Manager | Developer, Designer | Product Manager |
 | Manual acceptance run | Whoever ships the change | — | — |
 | Design references and versions | Designer | — | Designer |
+| `docs/research/*` | Product Manager | Designer (user research) | Product Manager |
 | Work item state | — lives outside the repo, see [ADR-0003](./docs/adr/0003-work-tracking.md) | — | — |
 
 `CODEOWNERS` encodes this matrix as a mechanism. Keep the two in sync; if they
@@ -51,6 +52,12 @@ criteria in the PRD. The Developer decides how that is verified and at which
 layer. Neither does the other's half: a PRD prescribing test types has crossed
 into implementation, and a suite with no traceable criteria is verifying
 whatever the developer assumed.
+
+**Research findings belong here; research evidence does not.** A curated
+finding — one claim, its method, its confidence — is reviewable and durable.
+A transcript is neither, and carries personal data into permanent, distributed
+history. The boundary is not negotiable for anything involving a person; see
+[ADR-0004](./docs/adr/0004-research-evidence-boundary.md).
 
 **Design decisions must reach the repository.** The design tool remains the
 source of truth for visuals, and nothing here tries to mirror it. But rules
@@ -80,6 +87,9 @@ will drift from it.
   confidently cite decisions you reversed months ago.
 - **PRD index review, each planning cycle.** Close what shipped, drop what will
   not happen.
+- **Research index review, each planning cycle.** Anything past its revisit
+  date is re-confirmed, superseded, or marked stale. Nothing enforces this, and
+  an unmarked expired finding gets cited as fact.
 
 ## Writing style
 

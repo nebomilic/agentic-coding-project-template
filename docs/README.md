@@ -9,6 +9,7 @@ with a different owner.
 | `adr/` | Why is it built this way? | Developer | Immutable — superseded, never edited |
 | `design/` | How should it look and behave? | Designer | Living — versioned by decision |
 | `runbooks/` | How do we operate it? | Developer | Living — corrected after every use |
+| `research/` | What do we know, and how well? | Product Manager | Perishable — true as of a date, decays untouched |
 
 ## The distinction that matters most
 
@@ -16,6 +17,18 @@ A **PRD** describes a problem and a desired outcome. An **ADR** describes a
 technical choice and what it commits us to. The moment a PRD names a
 technology, or an ADR decides something a user would notice, the document and
 its owner have come apart. Both are common; both are worth catching in review.
+
+## The fifth lifecycle
+
+Four of these behave predictably. An ADR is immutable. A PRD is living. A
+design entry is versioned by decision. A runbook is corrected when reality
+moves.
+
+A research finding is **perishable**, and it is the only one that goes wrong
+without anyone touching it. Nobody supersedes a finding the way they supersede
+an ADR; it simply sits there, two years old, looking like a fact. That is why
+every note carries both an as-of date and a revisit-by date, and why the
+research index needs walking each planning cycle rather than every two weeks.
 
 ## What is not here
 
@@ -26,7 +39,7 @@ version control is the worst available option.
 
 ## Numbering
 
-Documents in `prd/`, `adr/` and `design/` are numbered sequentially with four
+Documents in `prd/`, `adr/`, `design/` and `research/` are numbered sequentially with four
 digits and a kebab-case title:
 
 ```

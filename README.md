@@ -24,6 +24,7 @@ thread, a ticket comment, or someone's head.
 | `docs/prd/` | Product requirements — what we are building and why | Product Manager |
 | `docs/adr/` | Architecture decisions — technical choices and their consequences | Developer |
 | `docs/design/` | Design foundations and cross-cutting UI decisions | Designer |
+| `docs/research/` | Findings that inform what we build | Product Manager |
 | `docs/runbooks/` | Operational procedures for when something needs doing or fixing | Developer |
 | `infra/` | Environment and deployment definitions | Developer |
 | `scripts/` | Repository-wide automation | Developer |
@@ -65,6 +66,8 @@ them quietly becomes wrong.
   single screen.
 - **Runbook** — written the second time someone has to figure out the same
   procedure.
+- **Research finding** — written when something is learned, carries an as-of
+  date, and decays on its own until someone re-confirms it.
 
 ## What this repository deliberately does not hold
 
@@ -72,6 +75,11 @@ them quietly becomes wrong.
   the issue tracker, holding state only, with every item linking back here.
   [ADR-0003](./docs/adr/0003-work-tracking.md) argues why, including why a
   `TODO.md` is the worst of both worlds.
+- **Raw research evidence** — interview transcripts, recordings, survey
+  exports, purchased reports. `docs/research/` holds the findings and a pointer
+  to where the evidence lives. Personal data does not enter this repository at
+  all; [ADR-0004](./docs/adr/0004-research-evidence-boundary.md) explains why
+  that one is a line rather than a preference.
 - **Visual designs** — the design tool stays canonical. `docs/design/` holds
   the decisions a mockup cannot carry, and the references that say which
   version was meant.

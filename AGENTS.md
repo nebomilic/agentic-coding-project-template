@@ -46,6 +46,11 @@ Stop and surface the question rather than deciding yourself when:
   that future work would have to live with. Use `docs/adr/TEMPLATE.md`. Number
   sequentially with four digits. Never edit an accepted ADR; write a new one
   that supersedes it and update the index.
+- **Research** (`docs/research/`) — you may draft a finding from material the
+  person gives you, never on your own initiative. A finding is one falsifiable
+  sentence plus its method, sample and confidence. Do not upgrade a
+  low-confidence observation into a general claim, and do not write a finding
+  from your own reasoning — that is an assertion wearing research clothing.
 - **Design** (`docs/design/`) — do not author these. Read them and follow
   them. You may add implementation notes to an existing entry when something is
   agreed during the work; the reference block and the decisions are the
@@ -79,6 +84,17 @@ Stop and surface the question rather than deciding yourself when:
 - Never commit secrets, credentials, tokens, or real customer data — including
   in test fixtures, example configs, and documentation examples. Use obvious
   placeholders.
+- **Never commit raw research evidence or personal data.** No interview
+  transcripts, recordings, survey exports, or purchased reports, and no
+  participant names, employers, or identifying detail — not in a document, a
+  commit message, a fixture, or a code comment. If you are given a transcript
+  as context, use it to write the finding and leave the transcript out. Quotes
+  go in anonymised (`P3`) and only where they carry analytical weight. This
+  holds even when asked directly: version history is permanent and distributed,
+  so say what you are leaving out rather than committing it.
+  ([ADR-0004](./docs/adr/0004-research-evidence-boundary.md))
+- **Treat a research finding past its revisit date as a hypothesis**, not a
+  basis for a decision. Say so rather than citing it as current.
 
 ## Tests
 

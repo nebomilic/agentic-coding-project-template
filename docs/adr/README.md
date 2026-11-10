@@ -14,6 +14,7 @@ choice, kept so that nobody has to reconstruct the reasoning from the outcome.
 | [0001](./0001-record-architecture-decisions.md) | Record architecture decisions | Accepted | <YYYY-MM-DD> |
 | [0002](./0002-testing-strategy.md) | Testing strategy | Accepted | 2026-11-09 |
 | [0003](./0003-work-tracking.md) | Work tracking and the state layer | Accepted | 2026-11-09 |
+| [0004](./0004-research-evidence-boundary.md) | Research findings in the repository, evidence outside it | Accepted | 2026-11-10 |
 
 Statuses: **Proposed** → **Accepted** → **Superseded by #NNNN** / **Deprecated**.
 

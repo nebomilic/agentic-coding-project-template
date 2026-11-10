@@ -8,7 +8,10 @@
 ## Problem
 
 What is wrong today, and for whom. Evidence rather than assertion where it
-exists.
+exists — link the `docs/research/` finding it rests on, with its confidence
+level, rather than restating the claim here. If there is no finding behind it,
+say so plainly; an acknowledged assumption is workable, one disguised as a
+known fact is not.
 
 ## Who this is for
 

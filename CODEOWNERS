@@ -13,6 +13,7 @@
 /docs/prd/                      @pm
 /docs/adr/                      @dev-lead
 /docs/design/                   @designer
+/docs/research/                 @pm
 /docs/runbooks/                 @dev-team
 
 /packages/shared/tokens/        @designer @dev-lead
