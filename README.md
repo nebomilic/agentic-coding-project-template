@@ -92,4 +92,16 @@ the designs?" should find that question answered here rather than guessed at.
 
 ## Status
 
-<Current phase, e.g. "Pre-launch — v1 scope frozen, see docs/prd/README.md">
+**This is the template itself, not a project built from it.** There is no
+application code: `apps/` and `packages/` hold structure and conventions only,
+and the documents under `docs/` are templates plus worked examples marked as
+such.
+
+The structure is in use and settled. The four ADRs carry the reasoning behind
+it and are worth reading before changing anything — three of them are about
+what deliberately does *not* live in this repository, which is most of what
+makes the structure work. What has not yet been tested against a real project
+is listed under *What is still provisional* in `CONTRIBUTING.md`.
+
+**When you copy this template**, replace this section with the project's own
+phase — for example: `Pre-launch — v1 scope frozen, see docs/prd/README.md`.
