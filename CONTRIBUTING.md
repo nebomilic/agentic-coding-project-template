@@ -116,6 +116,95 @@ has actually gone wrong.
 failing loudly, so a typo gets you silent non-enforcement. `claude doctor`
 lists rejected entries; `/status` shows which setting sources are active.
 
+## How this is worked
+
+Four systems, each holding what it is actually good at. The repository is the
+hub: it holds every durable claim, and the others hold the things a repository
+handles badly.
+
+| What | Where | Why not the repo |
+|---|---|---|
+| Decisions, requirements, findings, operating knowledge | **This repository** | — |
+| What is in flight, who owns it, what is next | **Issue tracker** | State changes a dozen times a week; version control turns that into commit noise and merge conflicts ([ADR-0003](docs/adr/0003-work-tracking.md)) |
+| Visual designs | **Design tool** | Mirroring screens in text goes stale within a sprint; `docs/design/` holds the decisions and the references instead |
+| Interview recordings, transcripts, purchased reports | **Wherever evidence lives** | Unreviewable in a diff, and personal data must not enter permanent distributed history ([ADR-0004](docs/adr/0004-research-evidence-boundary.md)) |
+
+Links run one way: from the other systems **into** the repository. A ticket
+points at a PRD; a PRD never restates a ticket. The moment a copy appears
+somewhere else, the two begin drifting and nobody can tell which is current.
+
+### Sessions
+
+AI sessions split along the same line the ownership matrix does. Three, by
+role rather than by task:
+
+- **Product.** Research, synthesis, drafting PRDs and findings. Reads the
+  codebase for context, never writes to it.
+- **Development.** Implementing, tests, ADRs, git. Reads the PRD rather than
+  being told what it says. `.claude/settings.json` blocks its writes to
+  `docs/prd/` and `docs/research/`.
+- **Review.** Fresh, pointed at a diff, with one question: does this
+  contradict anything already accepted? Working alone, this is the substitute
+  for the reviewer `CODEOWNERS` assumes — and it is better than re-reading
+  your own work, because it cannot be anchored by remembering why you did it.
+
+Splitting by task instead — a session per feature — puts two sessions in the
+same files, and neither knows the other exists. Keep concurrent sessions in
+disjoint parts of the tree; the second write wins silently.
+
+### The handoff is files, not conversation
+
+This is the discipline the whole arrangement rests on, and the one that slips
+first. A PRD sitting uncommitted has not been handed off — the next session
+reads whatever happens to be on disk, mid-edit.
+
+Commit at the boundary, then switch. Sessions share no memory, so `git log` is
+the only record of what each actually did.
+
+### Obsidian
+
+An editor and a navigator over the repository, not a part of it. It opens the
+folder as it stands — no import, no conversion.
+
+What it adds that a code editor does not: **backlinks**. Open a document and
+the sidebar lists everything citing it. That is the blast radius, and it
+matters most at the moment you are about to supersede an ADR or mark a finding
+stale — those are exactly the moments you need to know who was relying on it.
+An ADR with no backlinks at all is usually missing from its index.
+
+Two rules keep it from becoming a dependency:
+
+- **Markdown links, not wikilinks.** `[[0003-work-tracking]]` renders as
+  literal text everywhere else and is invisible to agents. `.obsidian/app.json`
+  is committed so this is set for anyone who opens the vault; the rest of
+  `.obsidian/` is local and gitignored. Path form matters too — the full link
+  convention is in [AGENTS.md](AGENTS.md).
+- **No plugin-rendered content in committed files.** A Dataview query standing
+  in for the ADR index is a code block to everyone not running Obsidian, and to
+  every agent. Queries live in `docs/_review.md`, which is gitignored for
+  exactly that reason, and which is worth opening for the cadences below.
+
+Open the vault at the repository root, not at `docs/`. The documentation spans
+the tree — app and package READMEs are part of it.
+
+### Two things worth noticing
+
+Both are the arrangement telling you something is wrong upstream:
+
+- **You are explaining in the development session what the PRD should have
+  said.** The PRD is underspecified. A single session carries that missing
+  context in its head and never notices it is absent from the file.
+- **A write to `docs/prd/` or `docs/research/` is refused.** The work has
+  drifted into territory someone else owns. Say so rather than routing around
+  it.
+
+### What is still provisional
+
+The roles, the boundaries and the handoff discipline are settled — they follow
+from the ownership matrix and the ADRs. The specific tools are not. Replace any
+of them without touching anything else; the constraint that matters is that
+nothing committed depends on a particular one.
+
 ## Workflow
 
 1. **Problem is framed.** PM writes or updates a PRD. Designer and Developer
@@ -139,30 +228,6 @@ lists rejected entries; `/status` shows which setting sources are active.
 - **Research index review, each planning cycle.** Anything past its revisit
   date is re-confirmed, superseded, or marked stale. Nothing enforces this, and
   an unmarked expired finding gets cited as fact.
-
-## Editing tools
-
-Use whatever you like. One constraint, because it protects something the whole
-structure rests on: **nothing committed may require a particular tool to be
-understood.** A document has to be readable on the forge, in a plain editor,
-and by an agent reading the raw file.
-
-In practice that means two rules for Obsidian, which several of us use as the
-editor for this layer:
-
-- **Markdown links, not wikilinks.** `[[0003-work-tracking]]` renders as
-  literal text outside Obsidian and is invisible to agents. `.obsidian/app.json`
-  is committed so this is set for anyone who opens the vault; everything else
-  under `.obsidian/` is local and gitignored. The path form matters too — no
-  `./` prefix; the full convention is in [AGENTS.md](AGENTS.md).
-- **No plugin-rendered content in committed files.** A Dataview query in place
-  of the ADR index would show as a code block to everyone not running Obsidian.
-  Queries belong in `docs/_review.md`, which is gitignored for exactly this
-  reason.
-
-Open the vault at the repository root rather than at `docs/`. The documentation
-spans the tree — app and package READMEs are part of it — and a narrower vault
-breaks those links.
 
 ## Writing style
 

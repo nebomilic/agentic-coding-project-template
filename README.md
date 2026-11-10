@@ -35,8 +35,10 @@ thread, a ticket comment, or someone's head.
 ## Getting started
 
 1. Read this file.
-2. Read `CONTRIBUTING.md` — it explains how work moves through the repo and
-   who decides what.
+2. Read `CONTRIBUTING.md` — who decides what, how work moves, and **How this
+   is worked**: which system holds what, how sessions and tools divide up, and
+   where the handoff happens. Start there if you are wondering which tool to
+   open.
 3. Read the `README.md` of the app or package you are working in.
 4. Skim `docs/adr/README.md` to see which technical decisions are already
    settled. Re-opening a settled decision is fine; doing it by accident is not.
