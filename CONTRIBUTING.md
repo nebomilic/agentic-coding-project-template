@@ -98,9 +98,19 @@ More generally: a rule that blocks legitimate work gets resolved by deleting
 the file, and then nothing is enforced at all. Add a path only after something
 has actually gone wrong.
 
-**What this does not cover.** Shell commands — `sed -i`, `mv`, `tee` — are
-probably not caught. This is a guardrail against the accidental write, not a
-wall. `git diff` remains the thing that catches what slips through.
+**What this does not cover.** Three gaps, in order of how often they matter:
+
+- **Other tools.** This file is read by Claude Code. An agent reaching the
+  repository another way — a desktop session with the folder connected, for
+  instance — is not bound by it and can write anywhere in the tree. Verified,
+  not assumed. For those, `AGENTS.md` is the only layer carrying the boundary,
+  which is a reason to keep it short enough to actually be read.
+- **Shell commands.** `sed -i`, `mv`, `tee` are probably not caught even in
+  Claude Code.
+- **Determined effort.** This is a guardrail against the accidental write, not
+  a wall.
+
+`git diff` remains the thing that catches what slips through all three.
 
 **Verifying it loaded.** A malformed rule is skipped with a warning rather than
 failing loudly, so a typo gets you silent non-enforcement. `claude doctor`
