@@ -7,7 +7,7 @@ the Designer.
 
 | # | Title | Status | Updated |
 |---|---|---|---|
-| [0001](./0001-design-foundations.md) | Design foundations | Current | <YYYY-MM-DD> |
+| [0001](0001-design-foundations.md) | Design foundations | Current | <YYYY-MM-DD> |
 
 ## Source of truth
 

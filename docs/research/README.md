@@ -6,7 +6,7 @@ Findings that inform what we build. Owned by the Product Manager.
 
 | # | Title | Confidence | As of | Revisit |
 |---|---|---|---|---|
-| [0001](./0001-example-finding.md) | Example finding | Medium | <YYYY-MM-DD> | <YYYY-MM-DD> |
+| [0001](0001-example-finding.md) | Example finding | Medium | <YYYY-MM-DD> | <YYYY-MM-DD> |
 
 ## Findings, not evidence
 

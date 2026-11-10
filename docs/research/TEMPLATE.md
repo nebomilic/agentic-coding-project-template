@@ -4,7 +4,7 @@
 - **As of:** <YYYY-MM-DD> — when this was true
 - **Revisit by:** <YYYY-MM-DD> — after this, treat as hypothesis
 - **Owner:** <Product Manager>
-- **Status:** Current | Superseded by [RESEARCH-<NNNN>](./NNNN-<slug>.md) | Stale
+- **Status:** Current | Superseded by [RESEARCH-<NNNN>](NNNN-<slug>.md) | Stale
 - **Related:** <PRDs, ADRs, design entries this informs>
 
 ## Finding

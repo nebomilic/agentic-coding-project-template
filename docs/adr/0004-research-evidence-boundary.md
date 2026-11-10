@@ -3,8 +3,8 @@
 - **Status:** Accepted
 - **Date:** 2026-11-10
 - **Deciders:** <names>
-- **Related:** [ADR-0001](./0001-record-architecture-decisions.md),
-  [ADR-0003](./0003-work-tracking.md)
+- **Related:** [ADR-0001](0001-record-architecture-decisions.md),
+  [ADR-0003](0003-work-tracking.md)
 
 ## Context
 
@@ -44,7 +44,7 @@ Findings live in `docs/research/`. Raw evidence does not enter the repository.
 | Option | Why not |
 |---|---|
 | Raw transcripts committed alongside findings | Unreviewable in a diff, dilutes retrieval, and carries personal data into permanent history |
-| Findings in the issue tracker instead | Same failure as tickets holding knowledge ([ADR-0003](./0003-work-tracking.md)): written once, never curated, invisible to agents |
+| Findings in the issue tracker instead | Same failure as tickets holding knowledge ([ADR-0003](0003-work-tracking.md)): written once, never curated, invisible to agents |
 | No research folder; cite sources inline in PRDs | Every PRD re-states the same finding, each drifting separately, with no single place to correct it |
 | Keep everything in the research tool, nothing here | Findings stop being ambient context, and PRDs go back to asserting user needs from nowhere |
 

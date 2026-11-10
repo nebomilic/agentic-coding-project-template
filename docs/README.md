@@ -34,7 +34,7 @@ research index needs walking each planning cycle rather than every two weeks.
 
 Work state — what is in flight, who owns it, what is next — is deliberately
 outside the repository, in the issue tracker.
-[ADR-0003](./adr/0003-work-tracking.md) sets out why, and why a task list in
+[ADR-0003](adr/0003-work-tracking.md) sets out why, and why a task list in
 version control is the worst available option.
 
 ## Numbering

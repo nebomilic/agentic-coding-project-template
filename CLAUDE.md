@@ -1,6 +1,6 @@
 # Claude instructions
 
-This repository keeps its agent instructions in [`AGENTS.md`](./AGENTS.md).
+This repository keeps its agent instructions in [`AGENTS.md`](AGENTS.md).
 
 Read that file, then the nearest `AGENTS.md` to the code you are changing.
 

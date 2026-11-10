@@ -1,6 +1,6 @@
 # DESIGN-<NNNN>: <Title>
 
-- **Status:** Current | Superseded by [DESIGN-<NNNN>](./NNNN-<slug>.md) | Retired
+- **Status:** Current | Superseded by [DESIGN-<NNNN>](NNNN-<slug>.md) | Retired
 - **Owner:** <Designer>
 - **Updated:** <YYYY-MM-DD>
 - **Related:** <PRDs, ADRs, other design entries>

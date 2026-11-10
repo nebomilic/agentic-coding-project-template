@@ -1,6 +1,6 @@
 # ADR-<NNNN>: <Short decision title>
 
-- **Status:** Proposed | Accepted | Superseded by [ADR-<NNNN>](./NNNN-<slug>.md) | Deprecated
+- **Status:** Proposed | Accepted | Superseded by [ADR-<NNNN>](NNNN-<slug>.md) | Deprecated
 - **Date:** <YYYY-MM-DD>
 - **Deciders:** <who was in the room>
 - **Related:** <PRDs, other ADRs>

@@ -29,7 +29,7 @@ is.
 | Manual acceptance run | Whoever ships the change | — | — |
 | Design references and versions | Designer | — | Designer |
 | `docs/research/*` | Product Manager | Designer (user research) | Product Manager |
-| Work item state | — lives outside the repo, see [ADR-0003](./docs/adr/0003-work-tracking.md) | — | — |
+| Work item state | — lives outside the repo, see [ADR-0003](docs/adr/0003-work-tracking.md) | — | — |
 
 `CODEOWNERS` encodes this matrix as a mechanism. Keep the two in sync; if they
 disagree, `CODEOWNERS` is what actually happens.
@@ -57,7 +57,7 @@ whatever the developer assumed.
 finding — one claim, its method, its confidence — is reviewable and durable.
 A transcript is neither, and carries personal data into permanent, distributed
 history. The boundary is not negotiable for anything involving a person; see
-[ADR-0004](./docs/adr/0004-research-evidence-boundary.md).
+[ADR-0004](docs/adr/0004-research-evidence-boundary.md).
 
 **Design decisions must reach the repository.** The design tool remains the
 source of truth for visuals, and nothing here tries to mirror it. But rules
@@ -139,6 +139,29 @@ lists rejected entries; `/status` shows which setting sources are active.
 - **Research index review, each planning cycle.** Anything past its revisit
   date is re-confirmed, superseded, or marked stale. Nothing enforces this, and
   an unmarked expired finding gets cited as fact.
+
+## Editing tools
+
+Use whatever you like. One constraint, because it protects something the whole
+structure rests on: **nothing committed may require a particular tool to be
+understood.** A document has to be readable on the forge, in a plain editor,
+and by an agent reading the raw file.
+
+In practice that means two rules for Obsidian, which several of us use as the
+editor for this layer:
+
+- **Markdown links, not wikilinks.** `[[0003-work-tracking]]` renders as
+  literal text outside Obsidian and is invisible to agents. `.obsidian/app.json`
+  is committed so this is set for anyone who opens the vault; everything else
+  under `.obsidian/` is local and gitignored.
+- **No plugin-rendered content in committed files.** A Dataview query in place
+  of the ADR index would show as a code block to everyone not running Obsidian.
+  Queries belong in `docs/_review.md`, which is gitignored for exactly this
+  reason.
+
+Open the vault at the repository root rather than at `docs/`. The documentation
+spans the tree — app and package READMEs are part of it — and a narrower vault
+breaks those links.
 
 ## Writing style
 

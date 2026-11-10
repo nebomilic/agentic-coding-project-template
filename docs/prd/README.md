@@ -6,7 +6,7 @@ What we are building, and why. Owned by the Product Manager.
 
 | # | Title | Status | Updated |
 |---|---|---|---|
-| [0001](./0001-example-capability.md) | Example capability | Draft | <YYYY-MM-DD> |
+| [0001](0001-example-capability.md) | Example capability | Draft | <YYYY-MM-DD> |
 
 Statuses: **Draft** → **Ready** → **In progress** → **Shipped** / **Dropped**.
 

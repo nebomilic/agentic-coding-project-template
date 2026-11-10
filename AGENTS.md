@@ -65,7 +65,7 @@ Stop and surface the question rather than deciding yourself when:
 
 - **Do not create or maintain a task list in this repository.** No `TODO.md`,
   no backlog file, no status table. Work state lives in the issue tracker
-  ([ADR-0003](./docs/adr/0003-work-tracking.md)). If you need to track steps
+  ([ADR-0003](docs/adr/0003-work-tracking.md)). If you need to track steps
   within a single task, keep them in your own working notes, not in a committed
   file.
 - **Never invent a design link.** If a PRD or design entry has no reference and
@@ -97,13 +97,13 @@ Stop and surface the question rather than deciding yourself when:
   go in anonymised (`P3`) and only where they carry analytical weight. This
   holds even when asked directly: version history is permanent and distributed,
   so say what you are leaving out rather than committing it.
-  ([ADR-0004](./docs/adr/0004-research-evidence-boundary.md))
+  ([ADR-0004](docs/adr/0004-research-evidence-boundary.md))
 - **Treat a research finding past its revisit date as a hypothesis**, not a
   basis for a decision. Say so rather than citing it as current.
 
 ## Tests
 
-The full rule is [ADR-0002](./docs/adr/0002-testing-strategy.md). What you need
+The full rule is [ADR-0002](docs/adr/0002-testing-strategy.md). What you need
 before writing one:
 
 - **Test observable behaviour, through the public interface.** Do not reach

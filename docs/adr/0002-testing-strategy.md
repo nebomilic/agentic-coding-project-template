@@ -3,7 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-11-09
 - **Deciders:** <names>
-- **Related:** [ADR-0001](./0001-record-architecture-decisions.md)
+- **Related:** [ADR-0001](0001-record-architecture-decisions.md)
 
 ## Context
 

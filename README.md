@@ -74,12 +74,12 @@ them quietly becomes wrong.
 
 - **Work state** — what is in flight, who has it, what is next. That lives in
   the issue tracker, holding state only, with every item linking back here.
-  [ADR-0003](./docs/adr/0003-work-tracking.md) argues why, including why a
+  [ADR-0003](docs/adr/0003-work-tracking.md) argues why, including why a
   `TODO.md` is the worst of both worlds.
 - **Raw research evidence** — interview transcripts, recordings, survey
   exports, purchased reports. `docs/research/` holds the findings and a pointer
   to where the evidence lives. Personal data does not enter this repository at
-  all; [ADR-0004](./docs/adr/0004-research-evidence-boundary.md) explains why
+  all; [ADR-0004](docs/adr/0004-research-evidence-boundary.md) explains why
   that one is a line rather than a preference.
 - **Visual designs** — the design tool stays canonical. `docs/design/` holds
   the decisions a mockup cannot carry, and the references that say which
