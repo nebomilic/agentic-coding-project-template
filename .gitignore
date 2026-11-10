@@ -20,3 +20,13 @@ __pycache__/
 .vscode/
 *.log
 coverage/
+
+# Obsidian — commit only the settings that protect the repo's portability.
+# app.json carries markdown-links-not-wikilinks; everything else is local
+# workspace state and plugin data that would churn on every pane you move.
+.obsidian/*
+!.obsidian/app.json
+
+# Local review dashboard — a tool, not a document. Depends on the Dataview
+# plugin, so it would be unreadable to anyone else and to agents.
+docs/_review.md
