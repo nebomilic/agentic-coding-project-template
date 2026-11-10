@@ -30,6 +30,7 @@ thread, a ticket comment, or someone's head.
 | `scripts/` | Repository-wide automation | Developer |
 | `AGENTS.md` | Instructions for AI coding agents working in this repo | Developer |
 | `CODEOWNERS` | Who must review changes to which paths | Shared |
+| `.claude/settings.json` | Paths agents may not write to, enforced locally | Developer |
 
 ## Getting started
 

@@ -67,6 +67,45 @@ accessibility baseline — must exist as text in `docs/design/` and as values in
 is invisible to both new developers and coding agents, and the implementation
 will drift from it.
 
+## Enforcing ownership at write time
+
+`CODEOWNERS` routes review when a change is proposed. `.claude/settings.json`
+is the other half: it stops an agent writing to paths it does not own in the
+first place.
+
+```json
+"deny": [
+  "Edit(/docs/prd/**)",
+  "Edit(/docs/research/**)"
+]
+```
+
+Reads stay open — a session implementing a feature must be able to read the
+PRD and the research behind it. Only writing is blocked.
+
+**Why these two paths and not `docs/**`.** The list is deliberately short, and
+widening it breaks things:
+
+- **`docs/adr/` must stay writable.** `AGENTS.md` instructs whoever is doing
+  the work to record decisions as ADRs. Denying it would put the rules in
+  conflict with each other.
+- **`docs/design/` cannot be expressed at path level.** Implementation notes
+  may be added to an existing entry; the reference block and the decisions may
+  not. That is section-level ownership, finer than any file path can reach, so
+  it stays enforced by instruction.
+
+More generally: a rule that blocks legitimate work gets resolved by deleting
+the file, and then nothing is enforced at all. Add a path only after something
+has actually gone wrong.
+
+**What this does not cover.** Shell commands — `sed -i`, `mv`, `tee` — are
+probably not caught. This is a guardrail against the accidental write, not a
+wall. `git diff` remains the thing that catches what slips through.
+
+**Verifying it loaded.** A malformed rule is skipped with a warning rather than
+failing loudly, so a typo gets you silent non-enforcement. `claude doctor`
+lists rejected entries; `/status` shows which setting sources are active.
+
 ## Workflow
 
 1. **Problem is framed.** PM writes or updates a PRD. Designer and Developer

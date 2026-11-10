@@ -46,8 +46,12 @@ Stop and surface the question rather than deciding yourself when:
   that future work would have to live with. Use `docs/adr/TEMPLATE.md`. Number
   sequentially with four digits. Never edit an accepted ADR; write a new one
   that supersedes it and update the index.
-- **Research** (`docs/research/`) — you may draft a finding from material the
-  person gives you, never on your own initiative. A finding is one falsifiable
+- **Research** (`docs/research/`) — writes to this folder and to `docs/prd/`
+  are blocked by `.claude/settings.json`, deliberately; reading both is
+  expected. If a change seems to require editing one, that is the signal the
+  work has drifted into territory the Product Manager owns — say so rather than
+  looking for a way around it. You may draft a finding from material the person
+  gives you, never on your own initiative. A finding is one falsifiable
   sentence plus its method, sample and confidence. Do not upgrade a
   low-confidence observation into a general claim, and do not write a finding
   from your own reasoning — that is an assertion wearing research clothing.

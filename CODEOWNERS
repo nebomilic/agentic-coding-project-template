@@ -9,6 +9,7 @@
 /AGENTS.md                      @dev-lead
 /CLAUDE.md                      @dev-lead
 /CODEOWNERS                     @dev-lead @pm
+/.claude/settings.json          @dev-lead @pm
 
 /docs/prd/                      @pm
 /docs/adr/                      @dev-lead
