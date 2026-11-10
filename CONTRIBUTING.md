@@ -153,7 +153,8 @@ editor for this layer:
 - **Markdown links, not wikilinks.** `[[0003-work-tracking]]` renders as
   literal text outside Obsidian and is invisible to agents. `.obsidian/app.json`
   is committed so this is set for anyone who opens the vault; everything else
-  under `.obsidian/` is local and gitignored.
+  under `.obsidian/` is local and gitignored. The path form matters too — no
+  `./` prefix; the full convention is in [AGENTS.md](AGENTS.md).
 - **No plugin-rendered content in committed files.** A Dataview query in place
   of the ADR index would show as a code block to everyone not running Obsidian.
   Queries belong in `docs/_review.md`, which is gitignored for exactly this

@@ -81,6 +81,18 @@ Stop and surface the question rather than deciding yourself when:
 
 - Filenames in `docs/` are zero-padded and kebab-case:
   `0007-short-descriptive-title.md`.
+- **Links between documents are relative to the file, with no `./` prefix:**
+  `[ADR-0001](0001-record-architecture-decisions.md)` from a sibling,
+  `[ADR-0004](../adr/0004-research-evidence-boundary.md)` from another folder.
+  The `./` form resolves on the forge but not reliably in editors that index
+  the repository as a linked graph, where it degrades to a dead link without
+  reporting anything. `../` is fine and should be kept where it is genuine.
+- **No wikilinks** (`[[0003-work-tracking]]`). They render as literal text
+  outside the editor that creates them, and are invisible to anything reading
+  the raw file.
+- **Link text names the document**, not its position: `[ADR-0003]` or
+  `[ADR-0003: Work tracking]`, never "this ADR", "see here", or "the previous
+  decision". A backlink list is only readable if each entry says what it is.
 - Every document starts with a single `#` heading matching its subject.
 - Prefer prose over bullet fragments in documents meant for humans; prefer
   explicit constraints over narrative in documents meant for agents.
